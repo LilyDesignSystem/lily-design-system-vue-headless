@@ -1,12 +1,12 @@
 import { describe, expect, test } from "vitest";
 import { render } from "@testing-library/vue";
 
-import Subject from "./Comment.vue";
+import Subject from "./AddressographBox.vue";
 
-describe("Comment", () => {
-    test("renders a div element with class comment", () => {
+describe("AddressographBox", () => {
+    test("renders a div element with class addressograph-box", () => {
         const { container } = render(Subject, { props: {}, slots: { default: "content" } });
-        const root = container.querySelector(".comment");
+        const root = container.querySelector(".addressograph-box");
         expect(root).toBeTruthy();
         expect(root?.tagName).toBe("DIV");
     });
@@ -18,13 +18,13 @@ describe("Comment", () => {
 
     test("does not set aria-label when label is omitted", () => {
         const { container } = render(Subject, { slots: { default: "x" } });
-        const root = container.querySelector(".comment");
+        const root = container.querySelector(".addressograph-box");
         expect(root?.getAttribute("aria-label")).toBeNull();
     });
 
     test("applies aria-label when label prop is provided", () => {
-        const { container } = render(Subject, { props: { label: "Hello" }, slots: { default: "x" } });
-        const root = container.querySelector(".comment");
-        expect(root?.getAttribute("aria-label")).toBe("Hello");
+        const { container } = render(Subject, { props: { label: "Patient ID" }, slots: { default: "x" } });
+        const root = container.querySelector(".addressograph-box");
+        expect(root?.getAttribute("aria-label")).toBe("Patient ID");
     });
 });
