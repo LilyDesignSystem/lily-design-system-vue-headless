@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/vue";
 import { describe, expect, test } from "vitest";
 
-import Subject from "./CyprusNationalPassportNumberInput.vue";
+import Subject from "./KyprosNationalPassportNumberInput.vue";
 
-describe("CyprusNationalPassportNumberInput", () => {
+describe("KyprosNationalPassportNumberInput", () => {
     test("renders a text input", () => {
         render(Subject, { props: { label: "National Passport Number" } });
 
@@ -15,7 +15,7 @@ describe("CyprusNationalPassportNumberInput", () => {
         render(Subject, { props: { label: "National Passport Number" } });
 
         const input = screen.getByLabelText("National Passport Number");
-        expect(input.getAttribute("class")).toContain("cyprus-national-passport-number-input");
+        expect(input.getAttribute("class")).toContain("kypros-national-passport-number-input");
     });
 
     test("has autocomplete off", () => {
